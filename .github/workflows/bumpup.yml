@@ -19,6 +19,7 @@ jobs:
               run: |
                 git config --global user.name "onein528"
                 git config --global user.email "62196528+onein528@users.noreply.github.com"
+                git checkout main
                 git add .
                 git commit -m "Update Package.appxmanifest"
-                git push
+                git push origin main
