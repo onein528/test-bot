@@ -16,8 +16,9 @@ jobs:
               run: |
                   sed -i "s/<Identity Name=\".*\" Publisher=\".*\" Version=\".*\" \/>/<Identity Name=\"$1\" Publisher=\"$2\" Version=\"${{ inputs.files_new_version }}\" \/>/g" "Package.appxmanifest"
             - name: Commit changes
-              uses: EndBug/add-and-commit@v8
+              uses: EndBug/add-and-commit@v9
               with:
                   author_name: onein528
                   author_email: onein528@outlook.com
                   message: 'Update Package.appxmanifest'
+                  github_token: ${{ secrets.TEMP_PAT }}
