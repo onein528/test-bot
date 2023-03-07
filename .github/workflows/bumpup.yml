@@ -19,6 +19,8 @@ jobs:
               run: |
                 git config --global user.name "onein528"
                 git config --global user.email "onein528@outlook.com"
+                git init
+                git remote add origin https://github.com/onein528/test-bot.git
                 git fetch origin main
                 git checkout main
                 git add .
