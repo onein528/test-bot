@@ -15,12 +15,9 @@ jobs:
             - name: Fetch resources
               run: |
                   sed -i "s/<Identity Name=\".*\" Publisher=\".*\" Version=\".*\" \/>/<Identity Name=\"$1\" Publisher=\"$2\" Version=\"${{ inputs.files_new_version }}\" \/>/g" "Package.appxmanifest"
-            - name: Commit and push changes
-              run: |
-                git config --global user.name "onein528"
-                git config --global user.email "62196528+onein528@users.noreply.github.com"
-                git checkout main
-                git add .
-                git diff --staged
-                git commit -m "Update Package.appxmanifest"
-                git push HEAD:main
+            - name: Commit changes
+              uses: EndBug/add-and-commit@v8
+              with:
+                  author_name: onein528
+                  author_email: onein528@outlook.com
+                  message: 'Update Package.appxmanifest'
