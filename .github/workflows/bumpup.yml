@@ -21,4 +21,4 @@ jobs:
                   author_name: onein528
                   author_email: onein528@outlook.com
                   message: 'Update Package.appxmanifest'
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  github_token: ${{ secrets.ACCESS_TOKEN }}
