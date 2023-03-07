@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Assign the filename
 filename="../../../Package.appxmanifest"
 
 if [[ $search != "<Identity * Version=\"2.4.40.0\" />" && $replace != "<Identity * Version=\"$1\" />" ]]; then
