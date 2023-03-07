@@ -17,10 +17,8 @@ jobs:
                   sed -i "s/<Identity Name=\".*\" Publisher=\".*\" Version=\".*\" \/>/<Identity Name="$1" Publisher="$2" Version="${{ inputs.files_new_version }}" \/>/g" "Package.appxmanifest"
             - name: Commit and push changes
               run: |
-                git init
                 git config --global user.name "onein528"
                 git config --global user.email "onein528@outlook.com"
                 git add .
                 git commit -m "Update Package.appxmanifest"
-                git push -u origin main
-
+                git push origin HEAD
