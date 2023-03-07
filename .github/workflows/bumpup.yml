@@ -15,7 +15,7 @@ jobs:
             - name: Fetch resources
               run: |
                 if [[ $search != "<Identity * Version=\"2.4.40.0\" />" && $replace != "<Identity * Version=\"$1\" />" ]]; then
-                  sed -i "s/$search/$replace/" "../../../Package.appxmanifest"
+                  sed -i "s/$search/$replace/" "../../Package.appxmanifest"
                 fi
             - name: Commit and push changes
               run: |
