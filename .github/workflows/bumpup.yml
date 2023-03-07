@@ -1,6 +1,9 @@
 name: Bump up Files version to
 on:
-    workflow_dispatch
+    workflow_dispatch:
+        inputs:
+            version:
+                required: true
 
 jobs:
     resources:
