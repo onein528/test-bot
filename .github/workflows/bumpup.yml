@@ -11,7 +11,7 @@ jobs:
         name: Update resources
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
+            - uses: actions/checkout@v2
             - name: Fetch resources
               run: |
                   sed -i "s/<Identity Name=\".*\" Publisher=\".*\" Version=\".*\" \/>/<Identity Name=\"$1\" Publisher=\"$2\" Version=\"${{ inputs.files_new_version }}\" \/>/g" "Package.appxmanifest"
@@ -21,3 +21,7 @@ jobs:
                   author_name: onein528
                   author_email: onein528@outlook.com
                   message: 'Update Package.appxmanifest'
+                  commit: --signoff
+                  pathspec_error_handling: ignore
+                  add: .
+                  new_branch: bump-up-to-${{ inputs.files_new_version }}
