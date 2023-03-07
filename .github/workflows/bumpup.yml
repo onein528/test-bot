@@ -12,15 +12,16 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v1
-
-            - uses: actions/setup-node@v1
-
             - name: Fetch resources
-              run: ./scripts/fetch-resources.sh
+              run: |
+                if [[ $search != "<Identity * Version=\"2.4.40.0\" />" && $replace != "<Identity * Version=\"$1\" />" ]]; then
+                  sed -i "s/$search/$replace/" "../../../Package.appxmanifest"
+                fi
+            - name: Commit and push changes
+              run: |
+                git config --global user.name "your username"
+                git config --global user.email "your email"
+                git add -A
+                git commit -m "commit message"
+                git push
 
-            - name: Update resources
-              uses: test-room-7/action-update-file@v1
-              with:
-                  file-path: Package.appxmanifest
-                  commit-msg: Update resources
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
