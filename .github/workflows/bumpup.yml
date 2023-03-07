@@ -21,7 +21,3 @@ jobs:
                   author_name: onein528
                   author_email: onein528@outlook.com
                   message: 'Update Package.appxmanifest'
-                  commit: --signoff
-                  pathspec_error_handling: ignore
-                  add: .
-                  new_branch: bump-up-to-${{ inputs.files_new_version }}
