@@ -21,8 +21,8 @@ jobs:
                   author_name: onein528
                   author_email: onein528@outlook.com
                   message: |
-                    'Update Package.appxmanifest
+                    Update Package.appxmanifest
                     
                     
-                    on-behalf-of: @FluentHub <fluenthub-uwp@outlook.com>'
+                    on-behalf-of: @FluentHub <fluenthub-uwp@outlook.com>
                   github_token: ${{ secrets.ACCESS_TOKEN }}
