@@ -20,9 +20,6 @@ jobs:
               with:
                   author_name: onein528
                   author_email: onein528@outlook.com
-                  message: |
-                    Update Package.appxmanifest
-                    
-                    
-                    on-behalf-of: @FluentHub <fluenthub-uwp@outlook.com>
+                  message: 'Update Package.appxmanifest'
+                  new_branch: 'onein528/bump-up-to-${{ inputs.files_new_version }}'
                   github_token: ${{ secrets.ACCESS_TOKEN }}
