@@ -23,7 +23,7 @@ jobs:
                 committer: onein528 <onein528@outlook.com>
                 author: onein528 <onein528@outlook.com>
                 signoff: false
-                branch: 'onein528/bump-up-to-${{ inputs.files_new_version }}'
+                branch: onein528/bump-up-to-${{ inputs.files_new_version }}
                 delete-branch: true
                 title: 'Package: Bump Files to ${{ inputs.files_new_version }}'
                 body: |
