@@ -20,10 +20,10 @@ jobs:
               with:
                 token: ${{ secrets.ACCESS_TOKEN }}
                 commit-message: 'Package: Bump Files to ${{ inputs.files_new_version }}'
-                committer: onein528 <onein528@outlook.com>
-                author: onein528 <onein528@outlook.com>
+                committer: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+                author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
                 signoff: false
-                branch: onein528/bump-up-to-${{ inputs.files_new_version }}
+                branch: ${{ github.actor }}/bump-up-to-${{ inputs.files_new_version }}
                 delete-branch: true
                 title: 'Package: Bump Files to ${{ inputs.files_new_version }}'
                 body: |
