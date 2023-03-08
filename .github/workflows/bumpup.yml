@@ -17,7 +17,7 @@ jobs:
                   sed -i "s/<Identity Name=\"\(.*\)\" Publisher=\"\(.*\)\" Version=\"\(.*\)\" \/>/<Identity Name=\"\1\" Publisher=\"\2\" Version=\"${{ inputs.files_new_version }}\" \/>/g" "Package.appxmanifest"
             - name: Create a new PR
               uses: peter-evans/create-pull-request@v4
-              env:
+              with:
                 token: ${{ secrets.ACCESS_TOKEN }}
                 commit-message: 'Package: Bump Files to ${{ inputs.files_new_version }}'
                 committer: onein528 <onein528@outlook.com>
